@@ -69,8 +69,8 @@ def find_cool(arr)
   new_arr = []
   arr[0].each do |hash, key|
     binding.pry
-    if hash[key] == "cool"
-      new_arr.push(hash)
+    if key == "cool"
+      new_arr.push(???)
     end
   end
   new_arr
