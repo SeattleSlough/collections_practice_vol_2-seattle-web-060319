@@ -41,14 +41,56 @@ end
 
 def count_elements(arg)
   array = []
-  new_hash = {{name:}, count: 0}
-  arg.each do |element|
-    element.each do |key, value|
-     temp = element
-     array.push(temp)
+  arg.each do |hash|
+    hash[:count] = 0
+    name = hash[:name]
+      arg.each do |hash2|
+       if hash2[:name] == name
+         hash[:count] += 1
+       end
+    end
+  end.uniq
+end
+
+def merge_data(arr1, arr2)
+    new_prop_hash = {}
+  arr2[0].map do |name, prop_hash|
+    arr1.each do |set1|
+      if set1[:first_name] == name
+        new_prop_hash = prop_hash.merge(set1)
+      end
     end
   end
-  array
+  return new_prop_hash
 end
+  
+
+def find_cool(arr)
+  new_arr = []
+  arr[0].each do |hash, key|
+    binding.pry
+    if hash[key] == "cool"
+      new_arr.push(hash)
+    end
+  end
+  new_arr
+end
+  
+  
+  
+  
+  
+#   hash = {}
+#   arg1.each do |set1|
+#     arg2.each do |set2|
+#       set2.each do |name, details|
+#       if [set1][:first_name] == name 
+#         hash = set1.merge(details)
+#       end
+#     end
+#   end
+#   end
+#   return hash
+# end
 
 
