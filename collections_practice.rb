@@ -40,7 +40,6 @@ def remove_non_strings(arg)
 end
 
 def count_elements(arg)
-  array = []
   arg.each do |hash|
     hash[:count] = 0
     name = hash[:name]
@@ -67,16 +66,29 @@ end
 
 def find_cool(arr)
   new_arr = []
-  arr[0].each do |hash, key|
-    binding.pry
-    if key == "cool"
-      new_arr.push(???)
+  arr.each do |hash|
+    hash.each do |key, value|
+    if value == "cool"
+      new_arr.push(hash)
+    end 
     end
   end
   new_arr
 end
   
   
+def organize_schools(hash)
+  new_hash = {}
+  hash.each do |school, geography|
+    geography.each do |key, location|
+    
+    binding.pry
+    
+    location => []
+  end
+  end
+end
+    
   
   
   
